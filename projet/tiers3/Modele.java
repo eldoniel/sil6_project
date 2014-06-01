@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 public class Modele {
 
+	// Attributs
 	private ArrayList<Utilisateur> ListeInscrits;
-	/**
-	 * @param args
-	 */
+	
+	// Main
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
 	
+	// Methodes
 	public ArrayList<Utilisateur> getListeInscrits() {
 		return ListeInscrits;
 	}
