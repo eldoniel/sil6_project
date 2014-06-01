@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 public class Utilisateur {
 
+	// Attributs
 	private String NomUtilisateur;
 	private String MDPUtilisateur;
 	private ArrayList<Tweet> ListeTweets;
 	private ArrayList<String> ListeAbonnes;
 	
+	// Accesseurs et Modifieurs
 	public String getNomUtilisateur() {
 		return NomUtilisateur;
 	}
@@ -51,4 +53,18 @@ public class Utilisateur {
 		this.ListeAbonnes.remove(UtilSupp);
 	}
 
+	// Constructeurs
+	public Utilisateur() {
+		this.NomUtilisateur = "";
+		this.MDPUtilisateur = "";
+		this.ListeTweets = new ArrayList<Tweet>();
+		this.ListeAbonnes = new ArrayList<String>();
+	}
+	
+	public Utilisateur(String nom, String mdp){
+		this.NomUtilisateur = nom;
+		this.MDPUtilisateur = mdp;
+		this.ListeTweets = new ArrayList<Tweet>();
+		this.ListeAbonnes = new ArrayList<String>();
+	}
 }
