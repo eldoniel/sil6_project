@@ -13,13 +13,6 @@ public class application {
 		Registry registry = LocateRegistry.getRegistry("127.0.0.1",3000);
 		Modele modele;
 		modele = (Modele) registry.lookup("WeatherService");
-=======
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		chose
-	}
 
+	}
 }
