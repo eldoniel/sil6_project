@@ -1,5 +1,6 @@
 package projet.tiers3;
 
+import java.rmi.Remote;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
@@ -13,7 +14,7 @@ public class ServeurModele {
 		Modele stub;
 		stub = (Modele) UnicastRemoteObject.exportObject(modele,0);
 		Registry registry = LocateRegistry.createRegistry(3000);
-		registry.bind("ModeleService", stub);
+		registry.bind("ModeleService", (Remote) stub);
 	}
 
 

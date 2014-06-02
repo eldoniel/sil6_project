@@ -1,18 +1,19 @@
 package projet.tiers3;
 
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-public class ModeleImpl {
+public class ModeleImpl extends UnicastRemoteObject{
 
-	// Attributs
-	private ArrayList<Utilisateur> ListeInscrits;
+	private static final long serialVersionUID = 1L;
 
-	// Main
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	protected ModeleImpl() throws RemoteException {
+		super();
 	}
+
+	private ArrayList<Utilisateur> ListeInscrits;
 
 	// Methodes
 	public ArrayList<Utilisateur> getListeInscrits() {
