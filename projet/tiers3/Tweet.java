@@ -1,9 +1,10 @@
 package projet.tiers3;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Date;
 
-public class Tweet {
+public class Tweet implements Serializable {
 
 	// Attributs
 	private String MessageTweet;

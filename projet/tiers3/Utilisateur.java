@@ -1,14 +1,30 @@
 package projet.tiers3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Utilisateur {
+public class Utilisateur implements Serializable {
 
 	// Attributs
 	private String NomUtilisateur;
 	private String MDPUtilisateur;
 	private ArrayList<Tweet> ListeTweets;
 	private ArrayList<String> ListeAbonnes;
+
+	// Constructeurs
+	public Utilisateur() {
+		this.NomUtilisateur = "";
+		this.MDPUtilisateur = "";
+		this.ListeTweets = new ArrayList<Tweet>();
+		this.ListeAbonnes = new ArrayList<String>();
+	}
+	
+	public Utilisateur(String nom, String mdp){
+		this.NomUtilisateur = nom;
+		this.MDPUtilisateur = mdp;
+		this.ListeTweets = new ArrayList<Tweet>();
+		this.ListeAbonnes = new ArrayList<String>();
+	}
 	
 	// Accesseurs et Modifieurs
 	public String getNomUtilisateur() {
@@ -51,20 +67,5 @@ public class Utilisateur {
 	
 	public void SupprimerAbonne(String UtilSupp){
 		this.ListeAbonnes.remove(UtilSupp);
-	}
-
-	// Constructeurs
-	public Utilisateur() {
-		this.NomUtilisateur = "";
-		this.MDPUtilisateur = "";
-		this.ListeTweets = new ArrayList<Tweet>();
-		this.ListeAbonnes = new ArrayList<String>();
-	}
-	
-	public Utilisateur(String nom, String mdp){
-		this.NomUtilisateur = nom;
-		this.MDPUtilisateur = mdp;
-		this.ListeTweets = new ArrayList<Tweet>();
-		this.ListeAbonnes = new ArrayList<String>();
 	}
 }

@@ -16,6 +16,4 @@ public class ServeurModele {
 		Registry registry = LocateRegistry.createRegistry(3000);
 		registry.bind("ModeleService", (Remote) stub);
 	}
-
-
 }
