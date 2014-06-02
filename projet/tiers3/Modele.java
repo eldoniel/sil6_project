@@ -2,29 +2,12 @@ package projet.tiers3;
 
 import java.util.ArrayList;
 
-public class Modele {
-
-	private ArrayList<Utilisateur> ListeInscrits;
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+public interface Modele {
 	
-	public ArrayList<Utilisateur> getListeInscrits() {
-		return ListeInscrits;
-	}
+	public ArrayList<Utilisateur> getListeInscrits();
 	
-	public void AjouterUtilisateur(Utilisateur UtilAjout){
-		if(!this.ListeInscrits.contains(UtilAjout)){
-			this.ListeInscrits.add(UtilAjout);
-		}
-	}
+	public void AjouterUtilisateur(Utilisateur UtilAjout);
 	
-	public void SupprimerUtilisateur(Utilisateur UtilSupp){
-		this.ListeInscrits.remove(UtilSupp);
-	}
+	public void SupprimerUtilisateur(Utilisateur UtilSupp);
 
 }
