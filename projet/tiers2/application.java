@@ -19,6 +19,26 @@ public class application {
 		
 		modele.AjouterUtilisateur(u);
 		
+		System.out.println("AJOUT");
+		
+		for (int i = 0; i < modele.getListeInscrits().size(); i++) {
+			System.out.println(modele.getListeInscrits().get(i).getNomUtilisateur());
+		}
+		
+		u = modele.ModifierUtilisateur(u, "NvTest", "Nvsupertest");
+		
+		System.out.println("");
+		System.out.println("MODIF");
+		
+		for (int i = 0; i < modele.getListeInscrits().size(); i++) {
+			System.out.println(modele.getListeInscrits().get(i).getNomUtilisateur());
+		}
+		
+		System.out.println("");
+		System.out.println("SUPPR");
+		
+		modele.SupprimerUtilisateur(u);
+		
 		for (int i = 0; i < modele.getListeInscrits().size(); i++) {
 			System.out.println(modele.getListeInscrits().get(i).getNomUtilisateur());
 		}

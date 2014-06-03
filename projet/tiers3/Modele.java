@@ -10,6 +10,8 @@ public interface Modele extends Remote {
 	
 	public void AjouterUtilisateur(Utilisateur UtilAjout) throws RemoteException;
 	
+	public Utilisateur ModifierUtilisateur(Utilisateur UtilAjout, String nom, String mdp) throws RemoteException;
+	
 	public void SupprimerUtilisateur(Utilisateur UtilSupp) throws RemoteException;
 
 }
