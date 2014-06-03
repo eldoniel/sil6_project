@@ -36,21 +36,14 @@ public class application {
 		
 		u = modele.ModifierUtilisateur(u, "NvTest", "Nvsupertest");
 		
-		System.out.println("");
+		System.out.println();
 		System.out.println("MODIF");
 		
 		for (int i = 0; i < modele.getListeInscrits().size(); i++) {
 			System.out.println(modele.getListeInscrits().get(i).getNomUtilisateur());
 		}
 		
-		System.out.println("");
-		System.out.println("SUPPR");
-		
-		modele.SupprimerUtilisateur(u);
-		
-		for (int i = 0; i < modele.getListeInscrits().size(); i++) {
-			System.out.println(modele.getListeInscrits().get(i).getNomUtilisateur());
-		}
+		System.out.println();
 		
 		ControleurImpl ci = new ControleurImpl();
 		
@@ -61,6 +54,14 @@ public class application {
 			System.out.println(listeTweets.get(i).getNomUtilisateur() + " : " + listeTweets.get(i).getMessageTweet());
 		}
 		
+		System.out.println();
+		System.out.println("SUPPR");
 		
+		modele.SupprimerUtilisateur(u);
+		
+		for (int i = 0; i < modele.getListeInscrits().size(); i++) {
+			System.out.println(modele.getListeInscrits().get(i).getNomUtilisateur());
+		}
+
 	}	
 }

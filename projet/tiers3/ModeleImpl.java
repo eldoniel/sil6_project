@@ -36,7 +36,6 @@ public class ModeleImpl implements Modele {
 	}
 
 	public void AjouterUtilisateur(Utilisateur UtilAjout) throws RemoteException{
-		System.out.println(UtilAjout.getNomUtilisateur());
 		if(!this.ListeInscrits.contains(UtilAjout)){
 			this.ListeInscrits.add(UtilAjout);
 		}
