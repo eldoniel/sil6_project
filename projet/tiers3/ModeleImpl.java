@@ -42,19 +42,20 @@ public class ModeleImpl implements Modele {
 	}
 	
 	public Utilisateur ModifierUtilisateur(Utilisateur UtilModif, String nom, String mdp) throws RemoteException{
-		int indice;
+		int indiceUtil;
+		int indiceTweet;
 		
-		for (indice = 0; indice < ListeInscrits.size(); indice++) {
-			if((ListeInscrits.get(indice).getNomUtilisateur().equals(UtilModif.getNomUtilisateur())
-					&& (ListeInscrits.get(indice).getMDPUtilisateur().equals(UtilModif.getMDPUtilisateur())))){
-				ListeInscrits.get(indice).setNomUtilisateur(nom);
-				ListeInscrits.get(indice).setMDPUtilisateur(mdp);
+		for (indiceUtil = 0; indiceUtil < ListeInscrits.size(); indiceUtil++) {
+			if((ListeInscrits.get(indiceUtil).getNomUtilisateur().equals(UtilModif.getNomUtilisateur())
+					&& (ListeInscrits.get(indiceUtil).getMDPUtilisateur().equals(UtilModif.getMDPUtilisateur())))){
+				ListeInscrits.get(indiceUtil).setNomUtilisateur(nom);
+				ListeInscrits.get(indiceUtil).setMDPUtilisateur(mdp);
 				break;
 			}
 		}
 		
-		if (indice != ListeInscrits.size()){
-			return ListeInscrits.get(indice);
+		if (indiceUtil != ListeInscrits.size()){
+			return ListeInscrits.get(indiceUtil);
 		}
 		else{
 			return UtilModif;

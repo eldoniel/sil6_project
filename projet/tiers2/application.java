@@ -18,10 +18,10 @@ public class application {
 		Modele modele;
 		modele = (Modele) registry.lookup("ModeleService");
 
-		Utilisateur u = new Utilisateur("Test", "supertest");
+		Utilisateur u = new Utilisateur("idTest", "Test", "supertest");
 		
-		Tweet t1 = new Tweet("Premier tweet test", "Test");
-		Tweet t2 = new Tweet("Second tweet test", "Test");
+		Tweet t1 = new Tweet("Premier tweet test", "idTest");
+		Tweet t2 = new Tweet("Second tweet test", "idTest");
 		
 		u.AjouterTweet(t1);
 		u.AjouterTweet(t2);
@@ -51,7 +51,7 @@ public class application {
 		ArrayList<Tweet> listeTweets = ci.getListeTweets();
 		
 		for (int i = 0; i < listeTweets.size(); i++) {
-			System.out.println(listeTweets.get(i).getNomUtilisateur() + " : " + listeTweets.get(i).getMessageTweet());
+			System.out.println(listeTweets.get(i).getIdUtilisateur() + " : " + listeTweets.get(i).getMessageTweet());
 		}
 		
 		System.out.println();
