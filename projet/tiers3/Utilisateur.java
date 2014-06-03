@@ -3,12 +3,40 @@ package projet.tiers3;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name="Utilisateur")
+@XmlType(propOrder={"NomUtilisateur", "MDPUtilisateur", "ListeTweets", "ListeAbonnes"})
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Utilisateur implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+
 	// Attributs
+	@XmlElement(name="NomUtilisateur", type=String.class)
 	private String NomUtilisateur;
+	
+	@XmlElement(name="MDPUtilisateur", type=String.class)
 	private String MDPUtilisateur;
+	
+	@XmlElementWrapper(name="ListeTweets")
+	@XmlElements({
+	@XmlElement(name="Tweet")})
 	private ArrayList<Tweet> ListeTweets;
+	
+	@XmlElementWrapper(name="ListeAbonnes")
+	@XmlElements({
+	@XmlElement(name="Utilisateur")})
 	private ArrayList<String> ListeAbonnes;
 
 	// Constructeurs

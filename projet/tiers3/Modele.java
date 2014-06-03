@@ -13,5 +13,9 @@ public interface Modele extends Remote {
 	public Utilisateur ModifierUtilisateur(Utilisateur UtilAjout, String nom, String mdp) throws RemoteException;
 	
 	public void SupprimerUtilisateur(Utilisateur UtilSupp) throws RemoteException;
+	
+	public void SaveToXml() throws Exception;
+	
+	public void LoadFromXml() throws Exception;
 
 }

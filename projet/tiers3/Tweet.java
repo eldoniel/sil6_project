@@ -4,11 +4,28 @@ import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name="Tweet")
+@XmlType(propOrder={"MessageTweet", "NomUtilisateur", "DateHeureTweet"})
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Tweet implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	// Attributs
+	@XmlElement(name="MessageTweet", type=String.class)
 	private String MessageTweet;
+	@XmlElement(name="NomUtilisateur", type=String.class)
 	private String NomUtilisateur;
+	@XmlElement(name="DateHeureTweet", type=Date.class)
 	private Date DateHeureTweet;
 	
 	
