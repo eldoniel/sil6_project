@@ -8,11 +8,11 @@ public interface Modele extends Remote {
 	
 	public ArrayList<Utilisateur> getListeInscrits() throws RemoteException;
 	
-	public void AjouterUtilisateur(Utilisateur UtilAjout) throws RemoteException;
+	public void AjouterUtilisateur(Utilisateur UtilAjout) throws RemoteException, Exception;
 	
-	public Utilisateur ModifierUtilisateur(Utilisateur UtilAjout, String nom, String mdp) throws RemoteException;
+	public Utilisateur ModifierUtilisateur(Utilisateur UtilAjout, String nom, String mdp) throws RemoteException, Exception;
 	
-	public void SupprimerUtilisateur(Utilisateur UtilSupp) throws RemoteException;
+	public void SupprimerUtilisateur(Utilisateur UtilSupp) throws RemoteException, Exception;
 	
 	public void SaveToXml() throws Exception;
 	
