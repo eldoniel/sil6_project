@@ -44,11 +44,11 @@ public class Client {
 		
 		triListeParDate(listeTweets);
 		
-		Utilisateur test1 = new Utilisateur("t1", "test", "mdptest1");
-		Utilisateur test2 = new Utilisateur("t2", "test", "mdptest2");
-		Utilisateur test3 = new Utilisateur("t3", "test", "mdptest3");
-		Utilisateur test4 = new Utilisateur("t4", "test", "mdptest4");
-		Utilisateur test5 = new Utilisateur("t5", "test", "mdptest5");
+		Utilisateur test1 = new Utilisateur("t1", "test", "mdp1");
+		Utilisateur test2 = new Utilisateur("t2", "test", "mdp2");
+		Utilisateur test3 = new Utilisateur("t3", "test", "mdp3");
+		Utilisateur test4 = new Utilisateur("t4", "test", "mdp4");
+		Utilisateur test5 = new Utilisateur("t5", "test", "mdp5");
 		test1.AjouterAbonnement(u3.getIdUtilisateur());
 		test1.AjouterAbonnement(u5.getIdUtilisateur());
 		test2.AjouterAbonnement(u1.getIdUtilisateur());
