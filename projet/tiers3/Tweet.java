@@ -18,7 +18,7 @@ public class Tweet implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	// Attributs
 	@XmlElement(name="MessageTweet", type=String.class)

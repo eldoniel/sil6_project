@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ModeleImpl implements Modele {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	@XmlElementWrapper(name="ListeInscrits")
 	@XmlElements({
@@ -28,7 +28,6 @@ public class ModeleImpl implements Modele {
 	protected ModeleImpl() throws Exception {
 		super();
 		ListeInscrits = new ArrayList<Utilisateur>();
-		this.LoadFromXml();
 	}
 
 	// Methodes

@@ -10,6 +10,7 @@ public class ServeurModele {
   public static void main(String [] args) throws Exception
 	{
 		ModeleImpl modele = new ModeleImpl();
+		modele.LoadFromXml();
 		//A ajouter si l’implantation n’hérite pas de UnicastRemoteObjet (méthode 2)
 		Modele stub;
 		stub = (Modele) UnicastRemoteObject.exportObject(modele,0);
