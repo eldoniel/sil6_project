@@ -25,9 +25,10 @@ public class ModeleImpl implements Modele {
 	@XmlElement(name="Utilisateur")})
 	private ArrayList<Utilisateur> ListeInscrits;
 
-	protected ModeleImpl() throws RemoteException {
+	protected ModeleImpl() throws Exception {
 		super();
 		ListeInscrits = new ArrayList<Utilisateur>();
+		this.LoadFromXml();
 	}
 
 	// Methodes
@@ -35,13 +36,14 @@ public class ModeleImpl implements Modele {
 		return ListeInscrits;
 	}
 
-	public void AjouterUtilisateur(Utilisateur UtilAjout) throws RemoteException{
+	public void AjouterUtilisateur(Utilisateur UtilAjout) throws Exception{
 		if(!this.ListeInscrits.contains(UtilAjout)){
 			this.ListeInscrits.add(UtilAjout);
+			this.SaveToXml();
 		}
 	}
 	
-	public Utilisateur ModifierUtilisateur(Utilisateur UtilModif, String nom, String mdp) throws RemoteException{
+	public Utilisateur ModifierUtilisateur(Utilisateur UtilModif, String nom, String mdp) throws Exception{
 		int indiceUtil;
 		int indiceTweet;
 		
@@ -50,6 +52,7 @@ public class ModeleImpl implements Modele {
 					&& (ListeInscrits.get(indiceUtil).getMDPUtilisateur().equals(UtilModif.getMDPUtilisateur())))){
 				ListeInscrits.get(indiceUtil).setNomUtilisateur(nom);
 				ListeInscrits.get(indiceUtil).setMDPUtilisateur(mdp);
+				this.SaveToXml();
 				break;
 			}
 		}
@@ -62,17 +65,17 @@ public class ModeleImpl implements Modele {
 		}
 	}
 
-	public void SupprimerUtilisateur(Utilisateur UtilSupp) throws RemoteException{
+	public void SupprimerUtilisateur(Utilisateur UtilSupp) throws Exception{
 		int indice;
 		
 		for (indice = 0; indice < ListeInscrits.size(); indice++) {
 			if((ListeInscrits.get(indice).getNomUtilisateur().equals(UtilSupp.getNomUtilisateur())
 					&& (ListeInscrits.get(indice).getMDPUtilisateur().equals(UtilSupp.getMDPUtilisateur())))){
 				this.ListeInscrits.remove(indice);
+				this.SaveToXml();
 				break;
 			}
 		}
-		
 	}
 	
 	public void SaveToXml() throws Exception{
@@ -83,18 +86,15 @@ public class ModeleImpl implements Modele {
 		marshaller.setProperty("jaxb.encoding", "UTF-8") ;
 		// et l'on demande à JAXB de formatter ce fichier de façon à pouvoir le lire à l'oeil nu
 		marshaller.setProperty("jaxb.formatted.output", true) ;
-		marshaller.marshal(this, new File("Tweeter.xml"));
+		marshaller.marshal(this, new File("Twitter.xml"));
 	}
 
-
-
-	@Override
 	public void LoadFromXml() throws Exception {
 		JAXBContext context2 = JAXBContext.newInstance(ModeleImpl.class) ;
 		// création d'un unmarshaller
 		Unmarshaller unmarshaller = context2.createUnmarshaller() ;
 		ModeleImpl ModeleTemp = new ModeleImpl();
-		ModeleTemp = (ModeleImpl)unmarshaller.unmarshal(new File("Tweeter.xml")) ;
+		ModeleTemp = (ModeleImpl)unmarshaller.unmarshal(new File("Twitter.xml")) ;
 		this.ListeInscrits = ModeleTemp.getListeInscrits();
 	}
 }
