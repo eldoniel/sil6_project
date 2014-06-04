@@ -27,11 +27,11 @@ public class ControleurImpl {
 		}
 	}
 
-	public ArrayList<Tweet> getListeTweets() {
+	public ArrayList<Tweet> getListeTweets() throws RemoteException {
 		return listeTweets;
 	}
 
-	public void setListeTweets(ArrayList<Tweet> listeTweets) {
+	public void setListeTweets(ArrayList<Tweet> listeTweets) throws RemoteException {
 		this.listeTweets = listeTweets;
 	}
 	
