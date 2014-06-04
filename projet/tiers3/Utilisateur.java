@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name="Utilisateur")
-@XmlType(propOrder={"NomUtilisateur", "MDPUtilisateur", "ListeTweets", "ListeAbonnes"})
+@XmlType(propOrder={"IdUtilisateur", "NomUtilisateur", "MDPUtilisateur", "ListeTweets", "ListeAbonnements"})
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Utilisateur implements Serializable {
 
@@ -23,6 +23,9 @@ public class Utilisateur implements Serializable {
 	
 
 	// Attributs
+	@XmlElement(name="IdUtilisateur", type=String.class)
+	private String IdUtilisateur;
+
 	@XmlElement(name="NomUtilisateur", type=String.class)
 	private String NomUtilisateur;
 	
@@ -34,27 +37,36 @@ public class Utilisateur implements Serializable {
 	@XmlElement(name="Tweet")})
 	private ArrayList<Tweet> ListeTweets;
 	
-	@XmlElementWrapper(name="ListeAbonnes")
+	@XmlElementWrapper(name="ListeAbonnements")
 	@XmlElements({
 	@XmlElement(name="Utilisateur")})
-	private ArrayList<String> ListeAbonnes;
+	private ArrayList<String> ListeAbonnements;
 
 	// Constructeurs
 	public Utilisateur() {
 		this.NomUtilisateur = "";
 		this.MDPUtilisateur = "";
 		this.ListeTweets = new ArrayList<Tweet>();
-		this.ListeAbonnes = new ArrayList<String>();
+		this.ListeAbonnements = new ArrayList<String>();
 	}
 	
-	public Utilisateur(String nom, String mdp){
+	public Utilisateur(String id, String nom, String mdp){
+		this.IdUtilisateur = id;
 		this.NomUtilisateur = nom;
 		this.MDPUtilisateur = mdp;
 		this.ListeTweets = new ArrayList<Tweet>();
-		this.ListeAbonnes = new ArrayList<String>();
+		this.ListeAbonnements = new ArrayList<String>();
 	}
 	
 	// Accesseurs et Modifieurs
+	public String getIdUtilisateur() {
+		return IdUtilisateur;
+	}
+	
+	public void setIdUtilisateur(String idUtilisateur) {
+		IdUtilisateur = idUtilisateur;
+	}
+	
 	public String getNomUtilisateur() {
 		return NomUtilisateur;
 	}
@@ -83,17 +95,17 @@ public class Utilisateur implements Serializable {
 		this.ListeTweets.remove(TweetSupp);
 	}
 	
-	public ArrayList<String> getListeAbonnes() {
-		return ListeAbonnes;
+	public ArrayList<String> getListeAbonnements() {
+		return ListeAbonnements;
 	}
 	
-	public void AjouterAbonne(String UtilAjout){
-		if (!this.ListeAbonnes.contains(UtilAjout)){
-			this.ListeAbonnes.add(UtilAjout);
+	public void AjouterAbonnement(String UtilAjout){
+		if (!this.ListeAbonnements.contains(UtilAjout)){
+			this.ListeAbonnements.add(UtilAjout);
 		}
 	}
 	
-	public void SupprimerAbonne(String UtilSupp){
-		this.ListeAbonnes.remove(UtilSupp);
+	public void SupprimerAbonnement(String UtilSupp){
+		this.ListeAbonnements.remove(UtilSupp);
 	}
 }

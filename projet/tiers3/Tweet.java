@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name="Tweet")
-@XmlType(propOrder={"MessageTweet", "NomUtilisateur", "DateHeureTweet"})
+@XmlType(propOrder={"MessageTweet", "IdUtilisateur", "DateHeureTweet"})
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Tweet implements Serializable {
 
@@ -23,8 +23,8 @@ public class Tweet implements Serializable {
 	// Attributs
 	@XmlElement(name="MessageTweet", type=String.class)
 	private String MessageTweet;
-	@XmlElement(name="NomUtilisateur", type=String.class)
-	private String NomUtilisateur;
+	@XmlElement(name="IdUtilisateur", type=String.class)
+	private String IdUtilisateur;
 	@XmlElement(name="DateHeureTweet", type=Date.class)
 	private Date DateHeureTweet;
 	
@@ -38,12 +38,12 @@ public class Tweet implements Serializable {
 		MessageTweet = messageTweet;
 	}
 	
-	public String getNomUtilisateur() {
-		return NomUtilisateur;
+	public String getIdUtilisateur() {
+		return IdUtilisateur;
 	}
 	
-	public void setNomUtilisateur(String nomUtilisateur) {
-		NomUtilisateur = nomUtilisateur;
+	public void setIdUtilisateur(String nomUtilisateur) {
+		IdUtilisateur = nomUtilisateur;
 	}
 	
 	public Date getDateHeureTweet() {
@@ -57,13 +57,13 @@ public class Tweet implements Serializable {
 	// Constructeurs
 	public Tweet(){
 		this.MessageTweet = "";
-		this.NomUtilisateur = "";
+		this.IdUtilisateur = "";
 		this.DateHeureTweet = new Date();
 	}
 	
-	public Tweet(String message, String nomUtil){
+	public Tweet(String message, String idUtil){
 		this.MessageTweet = message;
-		this.NomUtilisateur = nomUtil;
+		this.IdUtilisateur = idUtil;
 		this.DateHeureTweet = new Date();
 	}
 	
